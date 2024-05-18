@@ -1,0 +1,24 @@
+<div style="width: 100%; height: 100%; max-width: 500px; margin: auto; display: flex; flex-direction: column; justify-content: center;">
+  <mat-card style="margin: 5%; padding: 5% 0; flex: 1 1 auto; border: 1px solid rgba(0, 0, 0, 0.25);">
+    <mat-card-title style="text-align: left; margin: 0 5% 5% 5%; font-size: 2em;">
+      Videó megosztás
+    </mat-card-title>
+    <mat-card-content style="margin: 0 5%; padding: 0 0;">
+      <p style="font-size: 1em;">A megosztáshoz, másolj be egy youtube Video / Shorts linket.</p>
+      <p style="font-size: 1em;">Például: <b>https://www.youtube.com/watch?v=weLcC-0OHvY</b></p>
+      <form [formGroup]="uploadForm" style="display: flex; flex-direction: column; min-height: 50%; margin: 0 0; padding: 0 0;">
+        <mat-form-field style="margin: 0 0; padding: 0 0;">
+          <mat-label style="margin: 0 0; padding: 0 0;">Videó link</mat-label>
+          <input matInput type="text" formControlName="shortLink" placeholder="https://www.youtube.com/watch?v=weLcC-0OHvY" style="margin: 0 0; padding: 0 0;  ">
+          <mat-icon matSuffix>link</mat-icon>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions style="margin-top: auto;">
+      <div style="width: 100%; display: flex; flex-direction: column; margin: 0% 5% 0% 5%;">
+        <button style="border-radius: 50px; font-size: 2em; padding: 10% 5%;" mat-raised-button color="primary" (click)="upload()" [disabled]="!uploadForm.valid">Megosztás</button>
+        <button style="font-size: 1.5em; margin: 2.5% 0 0 0; padding: 5% 0 5% 0;" mat-button color="primary" [routerLink]="'/home'">Vissza a főoldalra</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

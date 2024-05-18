@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "video-megoszto": {
+      "hosting": {
+        "video-megoszto": [
+          "video-megoszto"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "video-megoszto"
+  }
+}

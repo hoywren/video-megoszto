@@ -1,0 +1,38 @@
+<mat-nav-list>
+  <a (click)="onPageClicked()" mat-list-item routerLink="/home">
+    <div style="display:flex; flex-direction: row; gap: 1em; align-items: center;">
+      <mat-icon matListIcon>home</mat-icon>
+      <div>Főoldal</div>
+    </div>
+  </a>
+  <a *ngIf="!loggedInUser" (click)="onPageClicked()" mat-list-item routerLink="/login">
+    <div style="display:flex; flex-direction: row; gap: 1em; align-items: center;">
+      <mat-icon matListIcon>login</mat-icon>
+      <div>Bejelentkezés</div>
+    </div>
+  </a>
+  <a *ngIf="!loggedInUser" (click)="onPageClicked()" mat-list-item routerLink="/register">
+    <div style="display:flex; flex-direction: row; gap: 1em; align-items: center;">
+      <mat-icon matListIcon>login</mat-icon>
+      <div>Regisztráció</div>
+    </div>
+  </a>
+  <a *ngIf="loggedInUser" (click)="onPageClicked();" mat-list-item routerLink="/upload">
+    <div style="display:flex; flex-direction: row; gap: 1em; align-items: center;">
+      <mat-icon matListIcon>share</mat-icon>
+      <div>Videó megosztás</div>
+    </div>
+  </a>
+  <a *ngIf="loggedInUser" (click)="onPageClicked();" mat-list-item routerLink="/profile">
+    <div style="display:flex; flex-direction: row; gap: 1em; align-items: center;">
+      <mat-icon matListIcon>collections</mat-icon>
+      <div>Megosztott videóim</div>
+    </div>
+  </a>
+  <a *ngIf="loggedInUser" (click)="onPageClicked(); logout()" mat-list-item routerLink="/register">
+    <div style="display:flex; flex-direction: row; gap: 1em; align-items: center;">
+      <mat-icon matListIcon>login</mat-icon>
+      <div>Kijelentkezés</div>
+    </div>
+  </a>
+</mat-nav-list>
